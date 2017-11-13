@@ -19,7 +19,7 @@ public class MVeraLogReader extends VeraLogReader{
 	
 		
 	public MVeraLogReader(MConfigurations configs, boolean silence){
-		databaseOperations = DatabaseOperationsFactory.getDatabaseOperations(DB_IMPLEMENTATION.POSTGRESQL, configs.getDBConfigs());
+		databaseOperations = DatabaseOperationsFactory.getDatabaseOperations(DB_IMPLEMENTATION.MYSQL, configs.getDBConfigs());
 		if(databaseOperations.getDBConnection().checkConnection() == STATUS.CONNECTED){
 			this.registerObserver(new MDataManager(databaseOperations));
 			initSSHConfigs(silence);

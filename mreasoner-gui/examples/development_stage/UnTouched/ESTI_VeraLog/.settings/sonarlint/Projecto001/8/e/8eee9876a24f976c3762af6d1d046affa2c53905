@@ -1,0 +1,20 @@
+
+^squid:S1132?"GMove the "0" string literal on the left side of this string comparison.(û¬ÐÔ
+Xsquid:UselessImportCheck"4Remove this unused import 'javax.swing.JOptionPane'.(÷‰Îé
+gsquid:CommentedOutCodeLine&"<This block of commented-out lines of code should be removed.(œ‡‘ˆùÿÿÿÿ
+^squid:S1132?"GMove the "1" string literal on the left side of this string comparison.(û¬ÐÔ
+€squid:S11517"jReduce this switch case number of lines from 31 to at most 5, for example by extracting code into methods.(û¿4
+?squid:S1148h"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+csquid:S1132;"GMove the "1" string literal on the left side of this string comparison.(Áõò¦ÿÿÿÿÿ
+Tsquid:UselessImportCheck"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ
+i
+squid:S134G"NRefactor this code to not nest more than 3 if/for/while/switch/try statements.(ÌÕšÓûÿÿÿÿ
+V
+squid:S106S";Replace this usage of System.out or System.err by a logger.(ÈîÙûÿÿÿÿ
+4squid:S2095J"Close this "FileWriter".(Þ®¬šûÿÿÿÿ
+csquid:S1132;"GMove the "0" string literal on the left side of this string comparison.(Áõò¦ÿÿÿÿÿ
+Ysquid:UselessImportCheck"0Remove this unused import 'java.io.IOException'.(ªº»Úýÿÿÿÿ
+]
+squid:S899H"BDo something with the "boolean" value returned by "createNewFile".(Ð’Íùÿÿÿÿ
+Vsquid:S1161":Add the "@Override" annotation above this method signature(ž‹›Àüÿÿÿÿ
+Asquid:S1166Q"%Either log or rethrow this exception.(•øÆÛþÿÿÿÿ

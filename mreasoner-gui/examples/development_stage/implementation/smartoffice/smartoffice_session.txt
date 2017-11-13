@@ -14,7 +14,7 @@ false
 true
 </USE_MAX_EXECUTION_TIME> 
 <EXECUTION_TIME> 
-70000
+1
 </EXECUTION_TIME> 
 <SYSTEM_SPECIFICATION_FILE_PATH> 
 examples\development_stage\implementation\smartoffice\smartoffice_rules.mtpl
@@ -50,5 +50,5 @@ postgres
 sensors
 </DATABASE_NAME> 
 <EXTERNAL_JARS> 
-""
+"C:/Users/Chimezie/EstiLFPUBS/Jar/lampOn.jar"
 </EXTERNAL_JARS> 

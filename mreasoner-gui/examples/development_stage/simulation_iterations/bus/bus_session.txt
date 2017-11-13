@@ -17,7 +17,7 @@ true
 250
 </EXECUTION_TIME> 
 <SYSTEM_SPECIFICATION_FILE_PATH> 
-.\examples\development_stage\simulation_iterations\bus\bus.mtpl
+C:\Users\Unai\Desktop\Repositories\Java\mreasoner-gui\mreasoner-gui\examples\development_stage\simulation_iterations\bus\bus.mtpl
 </SYSTEM_SPECIFICATION_FILE_PATH> 
 <RESULTS_FILE_PATH> 
 null
@@ -26,7 +26,7 @@ null
 examples\lfpubs\lfpubs_output.txt
 </LFPUBS_OUTPUT_FILE_PATH> 
 <SESSION_FILE_PATH> 
-.\examples\development_stage\simulation_iterations\bus\bus_session.txt
+examples\development_stage\simulation_iterations\bus\bus_session.txt
 </SESSION_FILE_PATH> 
 <DATABASE_TYPE> 
 PostgreSQL

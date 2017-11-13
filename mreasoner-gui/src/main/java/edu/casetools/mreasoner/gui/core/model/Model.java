@@ -32,7 +32,7 @@ public class Model {
 		configsReader = new SystemConfigsReader();
 		if(configs != null){
 			dbOperations = DatabaseOperationsFactory.getDatabaseOperations(
-					DB_IMPLEMENTATION.POSTGRESQL,configs.getDBConfigs());
+					DB_IMPLEMENTATION.MYSQL,configs.getDBConfigs());
 		}
 		
 

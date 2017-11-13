@@ -57,6 +57,7 @@ public class DatabaseConfigsPanel extends JPanel{
      	buttonPanel.add(conectionStatus);
      	buttonPanel.add(connectButton);    	 
     	comboBox.addItem("PostgreSQL");
+    	comboBox.addItem("MySQL");
         passLabel.setLabelFor(passField);
         
         SpringUtilities.makeCompactGrid(dbConfigsPanel,

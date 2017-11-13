@@ -1,0 +1,18 @@
+
+csquid:S1132°"FMove the "" string literal on the left side of this string comparison.(†§ùõúÿÿÿÿ
+csquid:S2142Ê"FEither re-interrupt this method or rethrow the "InterruptedException".(²ı…¦ûÿÿÿÿ
+Rsquid:S12132";Move this constructor to comply with Java Code Conventions.(ÚÍ›²
+^squid:UnusedPrivateMethod>"4Remove this unused private "SSHManager" constructor.(Ñ®ôÿÿÿÿÿ
+csquid:S2142è"FEither re-interrupt this method or rethrow the "InterruptedException".(²ı…¦ûÿÿÿÿ
+<squid:S1166m"%Either log or rethrow this exception.(ï­£Ä
+Wsquid:S1213>";Move this constructor to comply with Java Code Conventions.(Ñ®ôÿÿÿÿÿ
+<squid:S1166p"%Either log or rethrow this exception.(‚°Ò
+<squid:S1166Y"%Either log or rethrow this exception.(¼‚Ùè
+Asquid:S1166y"%Either log or rethrow this exception.(ÈÔ±šøÿÿÿÿ
+squid:S2147s"yCombine this catch with the one at line 109, which has the same body. (sonar.java.source not set. Assuming 7 or greater.)(Ëš
+squid:S2147p"yCombine this catch with the one at line 109, which has the same body. (sonar.java.source not set. Assuming 7 or greater.)(‚°Ò
+x%squid:RedundantThrowsDeclarationCheckŠ"GRemove the redundant '!unknownSymbol!' thrown exception declaration(s).(ß´±'
+•squid:S2147y"yCombine this catch with the one at line 118, which has the same body. (sonar.java.source not set. Assuming 7 or greater.)(ÈÔ±šøÿÿÿÿ
+nsquid:S1450!"RRemove the "con" field and declare it as a local variable in the relevant methods.(ÿØÉëÿÿÿÿÿ
+<squid:S1166s"%Either log or rethrow this exception.(Ëš
+Asquid:S1166v"%Either log or rethrow this exception.(´Æıáúÿÿÿÿ

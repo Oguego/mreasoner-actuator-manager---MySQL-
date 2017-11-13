@@ -34,7 +34,7 @@ public class MDataManager extends VeraLogDataManager {
 		VeraVariable variable = data.getVariable();
 		 if(!variable.isEmpty()){	
 			 if(variable.getVariable().contentEquals(VeraVariable.VAR_TRIPPED)||(variable.getVariable().contentEquals(VeraVariable.VAR_STATUS))){
-				 
+				  
 		 	 String state = databaseOperations.getState(variable.getDeviceId());
 
 		 	 if(state != null){

@@ -1,0 +1,51 @@
+
+jsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(œÌÊ
+Nsquid:S1444"7Make this "public static deviceEnvironment" field final(ßã“«
+Osquid:S1213"8Move this variable to comply with Java Code Conventions.(„‡É‹
+squid:S1319"rThe type of the "deviceName" object should be an interface such as "Map" rather than the implementation "HashMap".(„™Íøÿÿÿÿ
+bsquid:S1132"FMove the "" string literal on the left side of this string comparison.(ÂœàÛùÿÿÿÿ
+Lsquid:S2386("0Make member "ignoredDevicePosition" "protected".(üªš´üÿÿÿÿ
+jsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(çÄÒœ
+Osquid:S1213"8Move this variable to comply with Java Code Conventions.(ÙµËı
+‰"squid:ClassVariableVisibilityCheck"VMake deviceName a static final constant or non-public and provide accessors if needed.(„™Íøÿÿÿÿ
+’squid:S1319"{The type of the "dangerousDevices" object should be an interface such as "List" rather than the implementation "ArrayList".(ÙµËı
+Hsquid:S23860",Make member "deviceEnvironment" "protected".(Šˆ›ÿÿÿÿÿ
+Š"squid:ClassVariableVisibilityCheck"\Make dangerousDevices a static final constant or non-public and provide accessors if needed.(ÙµËı
+…"squid:ClassVariableVisibilityCheck"WMake deviceState a static final constant or non-public and provide accessors if needed.(’˜Ê
+`squid:S11921"IDefine a constant instead of duplicating this literal "kitchen" 12 times.(³õŠŸ
+vsquid:S3008
+"ZRename this field "LOCAL_SERVER_IP" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°¤¾ôûÿÿÿÿ
+Msquid:S1444"6Make this "public static dangerousDevices" field final(ÙµËı
+”"squid:ClassVariableVisibilityCheck"aMake ignoredDevicePosition a static final constant or non-public and provide accessors if needed.(¶ôéïüÿÿÿÿ
+Œsquid:S1319"pThe type of the "deviceID" object should be an interface such as "Map" rather than the implementation "HashMap".(¶™œ‰şÿÿÿÿ
+Bsquid:S2386!"+Make member "dangerousDevices" "protected".(º½Ô³
+Dsquid:S2386¡"'Make member "deviceStatus" "protected".(¦”ÿúÿÿÿÿ
+Isquid:S1444"2Make this "public static deviceStatus" field final(„‡É‹
+Osquid:S1213"8Move this variable to comply with Java Code Conventions.(ßã“«
+Tsquid:S1213"8Move this variable to comply with Java Code Conventions.(¶ôéïüÿÿÿÿ
+‡"squid:ClassVariableVisibilityCheck"TMake deviceID a static final constant or non-public and provide accessors if needed.(¶™œ‰şÿÿÿÿ
+esquid:S1192L"IDefine a constant instead of duplicating this literal "corridor" 3 times.(‚É§Áüÿÿÿÿ
+dsquid:S1192n"MDefine a constant instead of duplicating this literal "BedroomLight" 3 times.(·ë´¿
+>squid:S2386Å"&Make member "deviceState" "protected".(¤°§ã
+hsquid:S1192B"LDefine a constant instead of duplicating this literal "living room" 6 times.(½ÑéŒÿÿÿÿÿ
+Lsquid:S1444"0Make this "public static deviceName" field final(„™Íøÿÿÿÿ
+Jsquid:S1444".Make this "public static deviceID" field final(¶™œ‰şÿÿÿÿ
+:squid:S2386U"#Make member "deviceID" "protected".(ÙøØé
+^squid:S1192H"GDefine a constant instead of duplicating this literal "toilet" 4 times.(©Ó¢°
+Hsquid:S1444"1Make this "public static deviceState" field final(’˜Ê
+‹squid:S1319"tThe type of the "deviceStatus" object should be an interface such as "Map" rather than the implementation "HashMap".(„‡É‹
+squid:S1319"€The type of the "ignoredDevicePosition" object should be an interface such as "List" rather than the implementation "ArrayList".(¶ôéïüÿÿÿÿ
+‡"squid:ClassVariableVisibilityCheck"TMake hostname a static final constant or non-public and provide accessors if needed.(Üåªøÿÿÿÿ
+squid:S1319"yThe type of the "deviceEnvironment" object should be an interface such as "Map" rather than the implementation "HashMap".(ßã“«
+Wsquid:S1444";Make this "public static ignoredDevicePosition" field final(¶ôéïüÿÿÿÿ
+†"squid:ClassVariableVisibilityCheck"XMake deviceStatus a static final constant or non-public and provide accessors if needed.(„‡É‹
+Csquid:S1068",Remove this unused "position" private field.(÷ªĞã
+Tsquid:S1213"8Move this variable to comply with Java Code Conventions.(¶™œ‰şÿÿÿÿ
+Šsquid:S1319"sThe type of the "deviceState" object should be an interface such as "Map" rather than the implementation "HashMap".(’˜Ê
+Jsquid:S1444".Make this "public static hostname" field final(Üåªøÿÿÿÿ
+Osquid:S1213"8Move this variable to comply with Java Code Conventions.(’˜Ê
+‹"squid:ClassVariableVisibilityCheck"]Make deviceEnvironment a static final constant or non-public and provide accessors if needed.(ßã“«
+Tsquid:S1213"8Move this variable to comply with Java Code Conventions.(„™Íøÿÿÿÿ
+rsquid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(çÄÒœ
+_squid:S1192:"HDefine a constant instead of duplicating this literal "bedroom" 8 times.(Ä®à«
+<squid:S2386|"%Make member "deviceName" "protected".(ä‘”á

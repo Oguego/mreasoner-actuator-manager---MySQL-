@@ -3,18 +3,14 @@
 *															*
 *										
 *************************************************************/
-states( atDesk,advise,adviseEnabled,lampOn);
+states(atDesk, lampOn, advise);
 
- is( #atDesk );
- is( atDesk );
+is( #atDesk );
+is( atDesk );
 
- holdsAt(#atDesk,0);
- holdsAt(#lampOn,0);
- holdsAt(#advise,0);
- holdsAt(#adviseEnabled,0);
+holdsAt(#atDesk,0);
+holdsAt(#lampOn,0);
 
- occurs( ingr( atDesk ), 4);
+occurs( ingr( #atDesk ), 10);
 
- ssr( (<->[2] #advise)  -> #adviseEnabled);
- sEr( ([-][5]atDesk ^ #lampOn ) -> lampOn );
-
+ssr( ([-][30] #advise)  -> lampOn);

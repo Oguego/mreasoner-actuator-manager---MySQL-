@@ -21,7 +21,7 @@ public class EventSimulator_Iterations extends Thread{
 	public EventSimulator_Iterations(Vector<Event> eventHistory,MConfigurations configs){
 		this.eventHistory = eventHistory;
 		this.connection = 
-				DatabaseOperationsFactory.getDatabaseOperations( DB_IMPLEMENTATION.POSTGRESQL,
+				DatabaseOperationsFactory.getDatabaseOperations( DB_IMPLEMENTATION.MYSQL,
 																 configs.getDBConfigs()  );
 		this.isRealTime = !configs.getTimeIsGivenInIterations();
 		running = true;

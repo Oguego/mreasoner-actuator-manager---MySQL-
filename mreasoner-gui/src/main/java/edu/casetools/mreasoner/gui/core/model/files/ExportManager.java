@@ -2,8 +2,6 @@ package edu.casetools.mreasoner.gui.core.model.files;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 import edu.casetools.dcase.m2nusmv.M2NuSMV;
@@ -13,18 +11,11 @@ import edu.casetools.dcase.m2nusmv.data.elements.BoundedOperator.BOP_TYPE;
 import edu.casetools.dcase.m2nusmv.data.elements.Rule;
 import edu.casetools.dcase.m2nusmv.data.elements.RuleElement;
 import edu.casetools.dcase.m2nusmv.data.elements.State;
-import edu.casetools.dcase.m2nusmv.data.elements.Time;
 import edu.casetools.mreasoner.configurations.data.MConfigurations;
 import edu.casetools.mreasoner.configurations.data.MConfigurations.EXECUTION_MODE;
 import edu.casetools.mreasoner.core.compiler.iterations.ParseException;
 import edu.casetools.mreasoner.core.elements.MInputData;
 import edu.casetools.mreasoner.core.elements.rules.SameTimeRule;
-import edu.casetools.mreasoner.core.elements.states.Internal.CalendarAt;
-import edu.casetools.mreasoner.core.elements.states.Internal.CalendarBetween;
-import edu.casetools.mreasoner.core.elements.states.Internal.ClockAt;
-import edu.casetools.mreasoner.core.elements.states.Internal.ClockBetween;
-import edu.casetools.mreasoner.core.elements.states.Internal.WeekDayAt;
-import edu.casetools.mreasoner.core.elements.states.Internal.WeekDayBetween;
 import edu.casetools.mreasoner.core.elements.time.TemporalOperator;
 import edu.casetools.mreasoner.core.elements.time.TemporalOperator.TOP_TYPE;
 import edu.casetools.mreasoner.gui.architecture.design.TestCaseLoader;
@@ -39,7 +30,6 @@ public class ExportManager {
 	private int strNo;
 	private int ntrNo;
 	private int bopNo;
-	private final int DAY_SECONDS = 86400;
 	
 	public ExportManager() {
 		loader = new TestCaseLoader();
@@ -150,17 +140,16 @@ public class ExportManager {
 
 	private String getOperatorName(TemporalOperator top) {
 		switch(top.getType()){
-			case STRONG_RELATIVE:
-				return top.getName()+"_sip_"+top.getSinceValue().getSimulation_value();
-			case WEAK_RELATIVE:
-				return top.getName()+"_wip_"+top.getSinceValue().getSimulation_value();
-			case STRONG_ABSOLUTE:
-				return top.getName()+"_sap_"+top.getSinceValue().getSimulation_value()+
-						"_"+top.getUntilValue().getSimulation_value();
-			case WEAK_ABSOLUTE:
-				return top.getName()+"_wap_"+top.getSinceValue().getSimulation_value()+"_"+top.getUntilValue().getSimulation_value();
-		}
-		return "";
+		case STRONG_RELATIVE:
+			return "sip_"+top.getName();
+		case WEAK_RELATIVE:
+			return "wip_"+top.getName();
+		case STRONG_ABSOLUTE:
+			return "sap_"+top.getName();
+		case WEAK_ABSOLUTE:
+			return "wap_"+top.getName();
+	}
+	return "";
 	}
 
 	private BOP_TYPE getTemporalOperatorType(TemporalOperator top) {
@@ -199,71 +188,7 @@ public class ExportManager {
 		rule.setAntecedents(getRuleAntecedents(ntr));
 		rule.setBops(getRuleTemporalOperators(ntr));
 		rule.setConsequent(stateToRuleElement(ntr.getConsequence()));
-		rule.setTimeReferences(getTimeReferences(ntr));
 		return rule;
-	}
-
-	private List<Time> getTimeReferences(SameTimeRule ntr) {
-		List<Time> timeReferences = new ArrayList<>();
-		for(int i=0; i < ntr.getInternalStates().size();i++){
-			Time time = getTimeToSeconds(ntr, i);
-			timeReferences.add(time);
-		}
-		return timeReferences;
-	}
-
-	private Time getTimeToSeconds(SameTimeRule ntr, int i) {
-		Time time = new Time();
-			if (ntr.getInternalStates().get(i) instanceof ClockAt){
-				ClockAt clockAt = (ClockAt) ntr.getInternalStates().get(i);
-				time.setLowBound(clockAt.getTime().getTimeOfDayInSeconds());
-			}  else if (ntr.getInternalStates().get(i) instanceof ClockBetween){
-				ClockBetween clockBetween = (ClockBetween) ntr.getInternalStates().get(i);
-				time.setLowBound(clockBetween.getSince().getTimeOfDayInSeconds());
-				time.setHighBound(clockBetween.getUntil().getTimeOfDayInSeconds());
-			}  else if (ntr.getInternalStates().get(i) instanceof WeekDayAt){
-				WeekDayAt weekDayAt = (WeekDayAt) ntr.getInternalStates().get(i);
-				time.setLowBound(weekDayAt.getWeekDay()*DAY_SECONDS);
-			}  else if (ntr.getInternalStates().get(i) instanceof WeekDayBetween){
-				WeekDayBetween weekDayBetween = (WeekDayBetween) ntr.getInternalStates().get(i);
-				time.setLowBound(weekDayBetween.getSince()*DAY_SECONDS);
-				time.setLowBound(weekDayBetween.getUntil()*DAY_SECONDS);
-			}  else if (ntr.getInternalStates().get(i) instanceof CalendarAt){
-				CalendarAt calendarAt = (CalendarAt) ntr.getInternalStates().get(i);
-				long since = getCalendarAtBoundNumber(calendarAt);
-				if(since > 0){
-					time.setLowBound(since);
-				}else return null;
-			}  else if (ntr.getInternalStates().get(i) instanceof CalendarBetween){
-				CalendarBetween calendarBetween = (CalendarBetween) ntr.getInternalStates().get(i);
-				long currentTime = new Date().getTime();	
-				long since = getCalendarBetweenSinceNumber(currentTime, calendarBetween);
-				long until = getCalendarBetweenUntilNumber(currentTime, calendarBetween);
-				if(since > 0 && until > 0 ){
-					time.setLowBound(since);
-					time.setHighBound(until);
-				}else return null;
-			}  
-		return time;
-	}
-
-	private long getCalendarBetweenUntilNumber(long currentTime, CalendarBetween calendarBetween) {
-		Calendar c = Calendar.getInstance();
-		c = calendarBetween.getSince().setValuesIntoCalendar(c);
-		return (c.getTime().getTime() - currentTime);
-	}
-
-	private long getCalendarBetweenSinceNumber(long currentTime, CalendarBetween calendarBetween) {	
-		Calendar c = Calendar.getInstance();
-		c = calendarBetween.getUntil().setValuesIntoCalendar(c);
-		return (c.getTime().getTime() - currentTime);
-	}
-
-	private long getCalendarAtBoundNumber(CalendarAt calendarAt) {
-		long currentTime = new Date().getTime();	
-		Calendar c = Calendar.getInstance();
-		c = calendarAt.getDate().setValuesIntoCalendar(c);
-		return (c.getTime().getTime() - currentTime);
 	}
 
 	private RuleElement stateToRuleElement(edu.casetools.mreasoner.core.elements.states.State state){

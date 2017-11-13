@@ -81,6 +81,7 @@ public class Launcher {
 			while(!eventReader.getSshClient().isInitializationFinished()){
 				sleep(1);
 			}
+			sleep(500);
 			if(eventReader.checkConnection()){
 				System.out.println("\nINITIALIZING REASONER..\n");
 				mtpl.MTPLInitialization();
@@ -138,8 +139,6 @@ public class Launcher {
 		in.nextInt();
 		eventReader.stop();
 		in.close();
-		
-		
 	}
 	
 	
